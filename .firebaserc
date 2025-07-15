@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "myportofolio-ba25e"
+  },
+  "targets": {
+    "myportofolio-ba25e": {
+      "hosting": {
+        "port": [
+          "rizky-port"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
