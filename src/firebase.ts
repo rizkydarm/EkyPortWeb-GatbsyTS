@@ -28,6 +28,7 @@ export type PortfolioItem = {
     title: string;
     description: string;
     link: string;
+    logo: string;
     icons: string[];
     images?: string[];
 }
@@ -47,7 +48,7 @@ export const fetchPortfolioData = async () => {
         querySnapshot.forEach((doc) => {
             // Push each document's data along with its ID into the array
             const port = doc.data() as PortfolioItem;
-            portfolioData.push({ id: doc.id, orderid: port.orderid, title: port.title, description: port.description, link: port.link, icons: port.icons, images: port.images });
+            portfolioData.push({ id: doc.id, orderid: port.orderid, title: port.title, description: port.description, link: port.link, logo: port.logo, icons: port.icons, images: port.images });
         });
 
         console.log("Fetched Portfolio Data:", portfolioData);

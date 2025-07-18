@@ -89,26 +89,32 @@ const PortfolioCard: React.FC<{ portfolioItem: PortfolioItem }> = ({ portfolioIt
         <Box sx={{ flexGrow: 1 }} />
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
           {portfolioItem.icons?.map((icon) => {
-            switch (icon) {
-              case 'flutter':
-                return <img src={"/flutter.svg"} alt={icon} 
-                  width={32} height={40} />;
-              case 'apple':
-                return <img src={"/apple.svg"} alt={icon} 
-                  width={40} height={40} />;
-              case 'android':
-                return <img src={"/android.svg"} alt={icon} 
-                  width={40} height={40} />;
-              case 'python':
-                return <img src={"/python.svg"} alt={icon} 
-                  width={40} height={40} />;
-              case 'cpp':
-                return <img src={"/cpp.svg"} alt={icon} 
-                  width={40} height={40} />;
-              default:
-                return null;
-            }
+            return <ImageFire image={"/" + icon + ".svg"} width={40} height={40} />;
+            // switch (icon) {
+            //   case 'flutter':
+            //     return <ImageFire image={"/flutter.svg"} width={32} height={40} />;
+            //     // return <img src={"/flutter.svg"} alt={icon} 
+            //     //   width={32} height={40} />;
+            //   case 'apple':
+            //     return <ImageFire image={"/apple.svg"} width={40} height={40} />;
+            //     // return <img src={"/apple.svg"} alt={icon} 
+            //     //   width={40} height={40} />;
+            //   case 'android':
+            //     return <ImageFire image={"/android.svg"} width={40} height={40} />;
+            //     // return <img src={"/android.svg"} alt={icon} 
+            //     //   width={40} height={40} />;
+            //   case 'python':
+            //     return <ImageFire image={"/python.svg"} width={40} height={40} />;
+            //   case 'cpp':
+            //     return <ImageFire image={"/cpp.svg"} width={40} height={40} />;
+            //   case 'js':
+            //     return <ImageFire image={"/js.svg"} width={40} height={40} />;
+            //   default:
+            //     return null;
+            // }
           })}
+          <Box sx={{ flexGrow: 1 }} />
+          {portfolioItem.logo && <ImageFire image={portfolioItem.logo} width={80} height={80} />}
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', gap: '16px' }}>
           <Button href={`${portfolioItem.link}`} target="_blank" rel="noopener noreferrer" variant='outlined'
